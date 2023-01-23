@@ -1,0 +1,3 @@
+../Core/Src/Appc/sensor_app.c:46:6:sensor_init	8	static
+../Core/Src/Appc/sensor_app.c:74:6:sensor_process	40	static
+../Core/Src/Appc/sensor_app.c:119:9:Sensor_IO_SPI_CS_Init_All	32	static

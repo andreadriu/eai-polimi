@@ -1,0 +1,2 @@
+../Core/Src/sensor_app.c:45:6:sensor_init	8	static
+../Core/Src/sensor_app.c:76:6:sensor_process	40	static

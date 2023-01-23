@@ -42,34 +42,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := AI_STWIN_BM
+BUILD_ARTIFACT_NAME := ai_vibration_analysis_stwin_bm
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-AI_STWIN_BM.elf \
+ai_vibration_analysis_stwin_bm.elf \
 
 MAP_FILES += \
-AI_STWIN_BM.map \
+ai_vibration_analysis_stwin_bm.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-AI_STWIN_BM.list \
+ai_vibration_analysis_stwin_bm.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: AI_STWIN_BM.elf secondary-outputs
+main-build: ai_vibration_analysis_stwin_bm.elf secondary-outputs
 
 # Tool invocations
-AI_STWIN_BM.elf AI_STWIN_BM.map: $(OBJS) $(USER_OBJS) /Users/leonardoiacussi/STM32CubeIDE/workspace_1.9.0/AI_STWIN_BM/STM32_CUBE_IDE/STM32L4R9ZIJX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "AI_STWIN_BM.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/leonardoiacussi/STM32CubeIDE/workspace_1.9.0/AI_STWIN_BM/STM32_CUBE_IDE/STM32L4R9ZIJX_FLASH.ld" --specs=nosys.specs -Wl,-Map="AI_STWIN_BM.map" -Wl,--gc-sections -static -L../../Drivers/CMSIS/DSP/Lib/GCC -L../../Middlewares/ST/AI/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+ai_vibration_analysis_stwin_bm.elf ai_vibration_analysis_stwin_bm.map: $(OBJS) $(USER_OBJS) C:\work2\Presentation\ai_vibration_analysis_stwin_bm\STM32_CUBE_IDE\STM32L4R9ZIJX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "ai_vibration_analysis_stwin_bm.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\work2\Presentation\ai_vibration_analysis_stwin_bm\STM32_CUBE_IDE\STM32L4R9ZIJX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ai_vibration_analysis_stwin_bm.map" -Wl,--gc-sections -static -L../../Drivers/CMSIS/DSP/Lib/GCC -L../../Middlewares/ST/AI/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -78,14 +78,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-AI_STWIN_BM.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "AI_STWIN_BM.list"
+ai_vibration_analysis_stwin_bm.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "ai_vibration_analysis_stwin_bm.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) AI_STWIN_BM.elf AI_STWIN_BM.list AI_STWIN_BM.map default.size.stdout
+	-$(RM) ai_vibration_analysis_stwin_bm.elf ai_vibration_analysis_stwin_bm.list ai_vibration_analysis_stwin_bm.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
